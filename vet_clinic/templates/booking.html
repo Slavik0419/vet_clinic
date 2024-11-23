@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Запис на прийом</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Запис на прийом</h1>
+            <div class="auth-buttons">
+                {% if username %}
+                    <div class="profile">
+                        <span>Привіт, {{ username }}!</span>
+                        <a href="/logout" class="button-small">Вийти</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <nav>
+            <a href="/">Головна</a>
+            <a href="/booking">Записатися на прийом</a>
+            <a href="/history">Історія записів</a>
+            <a href="/about">Про нас</a>
+            <a href="/news">Новини</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <form method="POST" action="/booking">
+                <h2>Форма запису на прийом</h2>
+                
+                <label for="username">Ваше ім'я:</label>
+                <input type="text" id="username" name="username" required placeholder="Введіть ваше ім'я">
+
+                <label for="pet_name">Ім'я тварини:</label>
+                <input type="text" id="pet_name" name="pet_name" required placeholder="Введіть ім'я вашої тварини">
+
+                <label for="doctor">Лікар:</label>
+                <select id="doctor" name="doctor">
+                    <option value="Dr. Smith">Dr. Smith</option>
+                    <option value="Dr. Johnson">Dr. Johnson</option>
+                </select>
+
+                <label for="date">Дата:</label>
+                <input type="date" id="date" name="date" required>
+
+                <button type="submit">Записатися</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Ветеринарна клініка. Завжди поруч із вами!</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Історія записів</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Історія записів</h1>
+            <div class="auth-buttons">
+                {% if username %}
+                    <div class="profile">
+                        <span>Привіт, {{ username }}!</span>
+                        <a href="/logout" class="button-small">Вийти</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <nav>
+            <a href="/">Головна</a>
+            <a href="/booking">Записатися на прийом</a>
+            <a href="/history">Історія записів</a>
+            <a href="/about">Про нас</a>
+            <a href="/news">Новини</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Ваші записи на прийом</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ім'я</th>
+                        <th>Ім'я тварини</th>
+                        <th>Лікар</th>
+                        <th>Дата</th>
+                        <th>Статус</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if appointments %}
+                        {% for appointment in appointments %}
+                        <tr>
+                            <td>{{ appointment[0] }}</td> <!-- Ім'я користувача -->
+                            <td>{{ appointment[1] }}</td> <!-- Ім'я тварини -->
+                            <td>{{ appointment[2] }}</td> <!-- Лікар -->
+                            <td>{{ appointment[3] }}</td> <!-- Дата -->
+                            <td>{{ appointment[4] }}</td> <!-- Статус -->
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="5">Записів не знайдено.</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="facts">
+            <h2>Цікаві факти про тварин</h2>
+            <ul>
+                <li>Кролики можуть повертати свої вуха на 180 градусів, щоб краще чути.</li>
+                <li>Жирафи сплять не більше 2 годин на добу.</li>
+                <li>У собак є унікальний "відбиток носа", який можна використовувати для їх ідентифікації.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Ветеринарна клініка. Завжди поруч із вами!</p>
+    </footer>
+</body>
+</html>

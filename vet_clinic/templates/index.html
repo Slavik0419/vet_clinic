@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ветеринарна клініка</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Ласкаво просимо до ветеринарної клініки</h1>
+            <div class="auth-buttons">
+                {% if username %}
+                    <div class="profile">
+                        <span>Привіт, {{ username }}!</span>
+                        <a href="/logout" class="button-small">Вийти</a>
+                    </div>
+                {% else %}
+                    <a href="/login" class="button-small">Вхід</a>
+                    <a href="/register" class="button-small">Реєстрація</a>
+                {% endif %}
+            </div>
+        </div>
+        <nav>
+            <a href="/">Головна</a>
+            <a href="/booking">Записатися на прийом</a>
+            <a href="/history">Історія записів</a>
+            <a href="/about">Про нас</a>
+            <a href="/news">Новини</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <h2>Ваша турбота — наше покликання!</h2>
+            <p>Ми працюємо 24/7, щоб забезпечити найкращий догляд за вашими улюбленцями. У нашій клініці працюють досвідчені лікарі, готові допомогти у будь-який час.</p>
+            <a href="/booking" class="button-main">Записатися на прийом</a>
+        </section>
+
+        <section class="gallery">
+            <h2>Наші улюбленці</h2>
+            <div class="photos">
+                <div class="photo-item">
+                    <img src="/static/img/dog.jpg" alt="Собака">
+                    <p>Собака</p>
+                </div>
+                <div class="photo-item">
+                    <img src="/static/img/cat.jpg" alt="Кіт">
+                    <p>Кіт</p>
+                </div>
+                <div class="photo-item">
+                    <img src="/static/img/rabbit.jpg" alt="Кролик">
+                    <p>Кролик</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Ветеринарна клініка. Завжди поруч із вами!</p>
+    </footer>
+</body>
+</html>

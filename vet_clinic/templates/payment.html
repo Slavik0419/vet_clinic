@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата</title>
+</head>
+<body>
+    <h1>Оплата за послуги</h1>
+    <form method="POST">
+        <label>Сума до сплати:</label>
+        <input type="number" name="amount" required placeholder="Введіть суму"><br>
+        <label>Номер картки:</label>
+        <input type="text" name="card_number" required placeholder="1234 5678 9012 3456"><br>
+        <label>Термін дії картки:</label>
+        <input type="text" name="expiry" required placeholder="MM/YY"><br>
+        <label>CVV:</label>
+        <input type="text" name="cvv" required placeholder="123"><br>
+        <button type="submit">Сплатити</button>
+    </form>
+</body>
+</html>
